@@ -2,12 +2,16 @@
 import LetterButton from '../../components/letter-button/letter-button';
 import GameOver from '../../components/game-over-component/game-over';
 import { letters } from '../../mocks/mocks';
-import { useState, useEffect} from 'react';
+import { useState} from 'react';
 import { MAX_ERRORS_COUNT } from './const';
 import styles from './styles.module.css';
+import { useAppSelector, useAppDispatch } from '../../hooks/redux-hooks';
+import { gameSlice } from '../../store/slices/game';
 
 export default function MainPage () {
-  const word = 'КОШКА';
+  const dispatch = useAppDispatch();
+  const currentCategory = useAppSelector((store) => store.game.currentCategoryName);
+  const word = useAppSelector((store) => store.game.currentWord).toUpperCase();
   const [currentLetters, changeCurrentLetters] = useState<string[]>([]);
   const [correctLetters, changeCorrectLetters] = useState('');
   const [errorsCount, setErrorsCount] = useState(0);
@@ -32,13 +36,17 @@ export default function MainPage () {
     changeCurrentLetters([]);
     changeCorrectLetters('');
     setErrorsCount(0);
+    dispatch(gameSlice.actions.changeCurrentWord());
   };
 
   return (
     <div>
+      <p>Категория {currentCategory}</p>
       {isGameOver && <GameOver isWon={isGameWon} onClick={handleResetButtonClick}/>}
       <p>Количество ошибок: {errorsCount}</p>
-      {[...word].map((letter, index) => <span key={index}>{currentLetters.includes(letter) ? letter : '_'}</span>)}
+      <div className={styles.wordContainer}>
+        {[...word].map((letter, index) => <span key={index}>{currentLetters.includes(letter) ? letter : '_'}</span>)}
+      </div>
       <div className={styles.btnContainer}>
         {
           letters.map((el, index) =>
@@ -49,7 +57,7 @@ export default function MainPage () {
                 onClick={handleLetterButtonClick}
                 disabled={currentLetters.includes(el) || isGameOver}
                 isCorrect={isBtnCorrect(el)}
-                isOver = {isGameOver}
+                isOver={isGameOver}
               />))
         }
       </div>

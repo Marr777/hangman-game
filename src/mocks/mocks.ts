@@ -1,18 +1,18 @@
-import { Alphabet, Data } from '../types/mocks.type';
+import { Alphabet, WordsData } from '../types/mocks.type';
 
 export const letters: Alphabet = ['А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ж', 'З', 'И', 'Й', 'К', 'Л', 'М', 'Н', 'О', 'П', 'Р', 'С', 'Т', 'У', 'Ф', 'Х', 'Ц', 'Ч', 'Ш', 'Щ', 'Ъ', 'Ы', 'Ь', 'Э', 'Ю', 'Я'];
 
-export const words: Data[] = [
+export const words: WordsData[] = [
   {
-    category: 'food' ,
+    category: 'Еда' ,
     words: ['суп','пюре','котлета']
   },
   {
-    category: 'animals' ,
+    category: 'Животные' ,
     words: ['кошка','баран','жираф']
   },
   {
-    category: 'vehicle' ,
+    category: 'Транспорт' ,
     words: ['машина','вертолет','самокат']
   }
 ];
