@@ -7,6 +7,8 @@ import { MAX_ERRORS_COUNT } from './const';
 import styles from './styles.module.css';
 import { useAppSelector, useAppDispatch } from '../../hooks/redux-hooks';
 import { gameSlice } from '../../store/slices/game';
+import { Link } from 'react-router-dom';
+import { AppRoute } from '../../store/const';
 
 export default function MainPage () {
   const dispatch = useAppDispatch();
@@ -41,6 +43,7 @@ export default function MainPage () {
 
   return (
     <div>
+      <Link className={styles.link} to={AppRoute.Main}>Назад к выбору категорий</Link>
       <p>Категория {currentCategory}</p>
       {isGameOver && <GameOver isWon={isGameWon} onClick={handleResetButtonClick}/>}
       <p>Количество ошибок: {errorsCount}</p>
