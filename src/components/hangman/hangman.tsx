@@ -5,6 +5,7 @@ import styles from './hangman.style.module.css';
 type HangmanProps = {
   step: number;
 }
+
 export default function Hangman ({step} : HangmanProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 

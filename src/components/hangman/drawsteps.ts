@@ -32,6 +32,7 @@ export class Drawer {
   }
 
   drawStepOne() {
+    this.ctx.strokeStyle = '#789534';
     this.ctx.beginPath();
     this.ctx.moveTo(20, 280);
     this.ctx.lineTo(120, 280);
