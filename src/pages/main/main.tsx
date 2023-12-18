@@ -45,9 +45,9 @@ export default function MainPage () {
   return (
     <div>
       <Link className={styles.link} to={AppRoute.Main}>Назад к выбору категорий</Link>
-      <p>Категория {currentCategory}</p>
+      <p style={{fontSize: '30px'}}>Категория {currentCategory}</p>
       {isGameOver && <GameOver isWon={isGameWon} onClick={handleResetButtonClick}/>}
-      <p>Количество ошибок: {errorsCount}</p>
+      <p style={{fontSize: '30px'}}>Количество ошибок: {errorsCount}</p>
       <Hangman step={errorsCount} />
       <div className={styles.wordContainer}>
         {[...word].map((letter, index) => <span key={index}>{currentLetters.includes(letter) ? letter : '_'}</span>)}

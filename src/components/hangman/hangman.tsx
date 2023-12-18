@@ -13,8 +13,18 @@ export default function Hangman ({step} : HangmanProps) {
       const canvas = canvasRef.current;
       const ctx = canvas.getContext('2d');
       if (ctx) {
-        const drawer = new Drawer(ctx);
-        drawer.drawStep(step);
+        const animate = () => {
+          const drawer = new Drawer(ctx);
+          drawer.drawStep(step);
+
+          requestAnimationFrame(animate);
+
+          if (step === 0) {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+          }
+        };
+
+        animate();
       }
     }
   }, [step]);

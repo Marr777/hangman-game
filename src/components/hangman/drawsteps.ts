@@ -60,18 +60,15 @@ export class Drawer {
   }
 
   drawStepFive() {
-    // Draw head
     this.ctx.beginPath();
     this.ctx.arc(200, 100, 20, 0, 2 * Math.PI);
     this.ctx.stroke();
 
-    // Draw body
     this.ctx.beginPath();
     this.ctx.moveTo(200, 120);
     this.ctx.lineTo(200, 200);
     this.ctx.stroke();
 
-    // Draw arms
     this.ctx.beginPath();
     this.ctx.moveTo(200, 140);
     this.ctx.lineTo(170, 170);
@@ -82,7 +79,6 @@ export class Drawer {
     this.ctx.lineTo(230, 170);
     this.ctx.stroke();
 
-    // Draw legs
     this.ctx.beginPath();
     this.ctx.moveTo(200, 200);
     this.ctx.lineTo(170, 230);
@@ -95,7 +91,6 @@ export class Drawer {
   }
 
   drawStepSix() {
-    // Draw sad face
     const sadMouthRadius = 4;
     const sadMouthX = 200;
     const sadMouthY = 108;
@@ -103,7 +98,7 @@ export class Drawer {
     this.ctx.beginPath();
     this.ctx.arc(sadMouthX, sadMouthY, sadMouthRadius, Math.PI, 2 * Math.PI, false);
 
-    // Draw eyes
+
     const leftEyeX = 195;
     const rightEyeX = 205;
     const eyeY = 95;
@@ -111,7 +106,6 @@ export class Drawer {
 
     this.ctx.moveTo(leftEyeX - eyeRadius, eyeY);
     this.ctx.arc(leftEyeX, eyeY, eyeRadius, 0, 2 * Math.PI, false);
-
     this.ctx.moveTo(rightEyeX - eyeRadius, eyeY);
     this.ctx.arc(rightEyeX, eyeY, eyeRadius, 0, 2 * Math.PI, false);
 
