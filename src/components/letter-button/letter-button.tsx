@@ -1,5 +1,5 @@
 import cn from 'classnames';
-import styles from './button-style.module.css';
+import styles from './button-style.module.scss';
 
 type LetterButtonProps = {
   letter: string;

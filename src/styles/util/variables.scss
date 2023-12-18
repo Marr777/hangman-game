@@ -1,0 +1,33 @@
+// Colors
+
+// Default
+
+$color-default-black: #000000;
+$color-default-white: #ffffff;
+$color-transparent: rgba(255, 255, 255, 0);
+
+// Project palette
+
+$main-background: #e8cec538;
+$main-text: #413207;
+$color-border-dark: #665f55;
+$color-accent: #b0907a;
+$color-light: #e1d4c9;
+$btn-disabled: #dfdcdc;
+
+// Typography
+
+$fz-default: 16px;
+$ff-inter: "Inter", "Arial", sans-serif;
+
+// Animation
+// ---------------------------------
+
+$tf-default: ease;
+$trans-default: 0.3s $tf-default;
+
+// Viewports
+
+$vp-350: 350px;
+$vp-768: 768px;
+$vp-1200: 1200px;

@@ -1,0 +1,41 @@
+@import '../../styles/util/util.scss';
+
+.button {
+  display: block;
+  width: 60px;
+  height: 60px;
+  padding: 20px;
+
+  font-size: 20px;
+  color: $main-text;
+  text-align: center;
+  font-weight: 500;
+
+  background-color: $color-default-white;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: all $trans-default;
+
+  &:hover {
+    background-color: #f0f0f0;
+  }
+}
+
+.button:disabled {
+  background-color: rgba(201, 103, 112, 0.57);
+  opacity: 1;
+  cursor:auto
+}
+
+.buttonCorrect:disabled {
+  background-color: rgba(127, 255, 212, 0.307);
+}
+
+.buttonOver:disabled {
+  color: $color-default-white;
+
+  background-color: $btn-disabled;
+  opacity: 0.5;
+  cursor:auto;
+}

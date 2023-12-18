@@ -32,7 +32,8 @@ export class Drawer {
   }
 
   drawStepOne() {
-    this.ctx.strokeStyle = '#789534';
+    this.ctx.strokeStyle = '#4a6196';
+    this.ctx.lineWidth = 2;
     this.ctx.beginPath();
     this.ctx.moveTo(20, 280);
     this.ctx.lineTo(120, 280);
@@ -96,6 +97,7 @@ export class Drawer {
     const sadMouthX = 200;
     const sadMouthY = 108;
 
+    this.ctx.strokeStyle = 'rgb(197 38 10)';
     this.ctx.beginPath();
     this.ctx.arc(sadMouthX, sadMouthY, sadMouthRadius, Math.PI, 2 * Math.PI, false);
 
@@ -105,6 +107,7 @@ export class Drawer {
     const eyeY = 95;
     const eyeRadius = 2;
 
+    this.ctx.strokeStyle = 'rgb(197 38 10)';
     this.ctx.moveTo(leftEyeX - eyeRadius, eyeY);
     this.ctx.arc(leftEyeX, eyeY, eyeRadius, 0, 2 * Math.PI, false);
     this.ctx.moveTo(rightEyeX - eyeRadius, eyeY);
