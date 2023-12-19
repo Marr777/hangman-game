@@ -10,7 +10,7 @@ import { gameSlice } from '../../store/slices/game';
 import { Link } from 'react-router-dom';
 import { AppRoute } from '../../store/const';
 import Hangman from '../../components/hangman/hangman';
-import Header from '../../components/header/header';
+import Transition from '../../util/transition';
 
 export default function MainPage () {
   const dispatch = useAppDispatch();
@@ -44,14 +44,15 @@ export default function MainPage () {
   };
 
   return (
-    <>
-      <Header />
+    <Transition>
       <div className='container'>
         <Link className={styles.link} to={AppRoute.Main}>&#8635; Назад к выбору категорий</Link>
-        <p style={{fontSize: '30px'}}>Категория {currentCategory}</p>
+        <div className={styles.gameContainer}>
+          <p className={styles.categoryName}>Категория: <span>{currentCategory}</span></p>
+          <Hangman step={errorsCount} />
+          <p className={styles.errorCount}>Количество ошибок: {errorsCount}</p>
+        </div>
         {isGameOver && <GameOver isWon={isGameWon} onClick={handleResetButtonClick}/>}
-        <p style={{fontSize: '30px'}}>Количество ошибок: {errorsCount}</p>
-        <Hangman step={errorsCount} />
         <div className={styles.wordContainer}>
           {[...word].map((letter, index) => <span key={index}>{currentLetters.includes(letter) ? letter : '_'}</span>)}
         </div>
@@ -70,6 +71,6 @@ export default function MainPage () {
           }
         </div>
       </div>
-    </>
+    </Transition>
   );
 }

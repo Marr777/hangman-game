@@ -4,7 +4,7 @@ import { AppRoute } from '../../store/const';
 import { useAppDispatch } from '../../hooks/redux-hooks';
 import { gameSlice } from '../../store/slices/game';
 import styles from './styles.module.css';
-import Header from '../../components/header/header';
+import Transition from '../../util/transition';
 
 export default function IntroScreen () {
   const dispatch = useAppDispatch();
@@ -12,8 +12,7 @@ export default function IntroScreen () {
   //   dispatch(gameSlice.actions.changeCategory(wordsData));
   // };
   return (
-    <>
-      <Header />
+    <Transition>
       <ul className={styles.linkList}>
         {words.map((word) =>
           (
@@ -23,6 +22,6 @@ export default function IntroScreen () {
           )
         )}
       </ul>
-    </>
+    </Transition>
   );
 }

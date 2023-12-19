@@ -25,6 +25,7 @@
   margin: 30px auto;
 
   font-size: 25px;
+  line-height: 36px;
   font-weight: 700;
   font-family: sans-serif;
   color: #53baad;
@@ -37,4 +38,33 @@
 
 .link:hover {
   color: #376c64;
+}
+
+.gameContainer {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  grid-template-rows: auto auto;
+  column-gap: 20px;
+  row-gap: 30px;
+}
+
+.errorCount,
+.categoryName {
+  margin: 0;
+  grid-column: 3/4;
+  align-self: center;
+}
+
+.errorCount {
+  align-self: start;
+}
+
+.categoryName {
+  align-self: end;
+  font-size: 20px;
+
+  span {
+    font-weight: 700;
+    text-transform: lowercase;
+  }
 }

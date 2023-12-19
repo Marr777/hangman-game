@@ -1,6 +1,8 @@
 .hangman {
   display: block;
-  margin: 20px auto;
+  margin: 0 auto;
+  grid-column: 2/3;
+  grid-row: 1/-1;
   background: linear-gradient( #3872e0, transparent 1px), linear-gradient( 90deg, #92ace8, #fff 1px);
   background-size: 15px 15px;
   background-position: center center;
