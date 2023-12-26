@@ -11,6 +11,8 @@ import { Link } from 'react-router-dom';
 import { AppRoute } from '../../store/const';
 import Hangman from '../../components/hangman/hangman';
 import Transition from '../../util/transition';
+import LivesCount from '../../components/lives-count/lives-count';
+
 
 export default function MainPage () {
   const dispatch = useAppDispatch();
@@ -50,7 +52,8 @@ export default function MainPage () {
         <div className={styles.gameContainer}>
           <p className={styles.categoryName}>Категория: <span>{currentCategory}</span></p>
           <Hangman step={errorsCount} />
-          <p className={styles.errorCount}>Количество ошибок: {errorsCount}</p>
+          {/* <p className={styles.errorCount}>Количество ошибок: {errorsCount}</p> */}
+          <LivesCount lives={errorsCount} />
         </div>
         {isGameOver && <GameOver isWon={isGameWon} onClick={handleResetButtonClick}/>}
         <div className={styles.wordContainer}>

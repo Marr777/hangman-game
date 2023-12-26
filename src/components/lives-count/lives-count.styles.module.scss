@@ -1,0 +1,50 @@
+@import '../../styles/util/util.scss';
+
+.lives {
+  display: flex;
+  gap: 2px;
+  grid-column: 3/4;
+  align-self: start;
+
+  svg {
+    fill: #F22020;
+    transform: scale(0.8);
+    transition: all $trans-default;
+  }
+
+  &_1 {
+    svg:last-child {
+      fill: gainsboro;
+    }
+  }
+
+  &_2 {
+    svg:last-child, svg:nth-child(5) {
+      fill: gainsboro;
+    }
+  }
+
+  &_3 {
+    svg:last-child, svg:nth-child(5), svg:nth-child(4) {
+      fill: gainsboro;
+    }
+  }
+
+  &_4 {
+    svg:not(:first-child, :nth-child(2)) {
+      fill: gainsboro;
+    }
+  }
+
+  &_5 {
+    svg:not(:first-child) {
+      fill: gainsboro;
+    }
+  }
+
+  &_6 {
+    svg {
+      fill: gainsboro;
+    }
+  }
+}
